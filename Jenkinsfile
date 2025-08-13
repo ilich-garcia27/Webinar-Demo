@@ -10,6 +10,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         bat 'npm ci'
+        bat 'npm install request punycode --save'
       }
     }
     stage('Run Cypress tests') {

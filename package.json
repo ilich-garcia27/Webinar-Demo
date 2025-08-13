@@ -8,9 +8,13 @@
     "test:ci": "cypress run --reporter mochawesome --reporter-options reportDir=reports/mochawesome,overwrite=false,html=false,json=true"
   },
   "devDependencies": {
-    "cypress": "^12.0.0",
     "@badeball/cypress-cucumber-preprocessor": "^x.x.x",
     "@bahmutov/cypress-esbuild-preprocessor": "^x.x.x",
+    "cypress": "^12.0.0",
     "cypress-mochawesome-reporter": "^x.x.x"
+  },
+  "dependencies": {
+    "punycode": "^2.3.1",
+    "request": "^2.88.2"
   }
 }
