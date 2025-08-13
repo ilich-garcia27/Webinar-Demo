@@ -1,0 +1,16 @@
+{
+  "name": "qa-ia-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "cypress:open": "cypress open",
+    "test:local": "cypress run",
+    "test:ci": "cypress run --reporter mochawesome --reporter-options reportDir=reports/mochawesome,overwrite=false,html=false,json=true"
+  },
+  "devDependencies": {
+    "cypress": "^12.0.0",
+    "@badeball/cypress-cucumber-preprocessor": "^x.x.x",
+    "@bahmutov/cypress-esbuild-preprocessor": "^x.x.x",
+    "cypress-mochawesome-reporter": "^x.x.x"
+  }
+}
