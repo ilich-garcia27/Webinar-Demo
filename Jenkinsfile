@@ -9,12 +9,12 @@ pipeline {
     }
     stage('Install dependencies') {
       steps {
-        sh 'npm ci'
+        bat 'npm ci'
       }
     }
     stage('Run Cypress tests') {
       steps {
-        sh 'npm run test:ci'
+        bat 'npm run test:ci'
       }
     }
     stage('Archive reports') {
