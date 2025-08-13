@@ -24,9 +24,4 @@ pipeline {
       }
     }
   }
-  post {
-    always {
-      junit 'reports/mochawesome/*.xml'
-    }
-  }
 }
