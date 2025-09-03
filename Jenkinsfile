@@ -15,7 +15,9 @@ pipeline {
     }
     stage('Run Cypress tests') {
       steps {
-        bat 'npm run test:ci'
+        ansiColor('xterm') {
+          bat 'npm run test:ci'
+        }
       }
     }
     stage('Archive reports') {
