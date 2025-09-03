@@ -9,7 +9,7 @@ Feature: Login
     And I click the login button
     Then I should see the products page
 
-  Scenario Outline: Login fails with invalid password
+  Scenario Outline: Login fails with invalid credentials
     Given I open the login page
     When I enter username "<username>" and password "<password>"
     And I click the login button
