@@ -19,13 +19,14 @@ class LoginPage {
         return cy.get('[data-test="error"]');
     }
 
-    get productsList() {
-        return cy.get('.inventory_list');
-    }
-
     enterCredentials(username, password) {
-        this.usernameInput.should('be.visible').clear().type(username);
-        this.passwordInput.should('be.visible').clear().type(password);
+        if (username !== "") {
+            this.usernameInput.should('be.visible').clear().type(username);
+        }
+
+        if (password !== "") {
+            this.passwordInput.should('be.visible').clear().type(password);
+        }
     }
 }
 

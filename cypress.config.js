@@ -17,6 +17,6 @@ module.exports = defineConfig({
       return config;
     },
     baseUrl: 'https://www.saucedemo.com',
-    supportFile: 'cypress/support/e2e.js'
+    supportFile: false
   }
 });

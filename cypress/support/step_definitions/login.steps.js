@@ -1,5 +1,6 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import LoginPage from '../../page_objects/LoginPage';
+import ProductsPage from '../../page_objects/ProductsPage';
 
 Given('I open the login page', () => {
   LoginPage.visit();
@@ -15,7 +16,9 @@ When('I click the login button', () => {
 
 Then('I should see the products page', () => {
   cy.url().should('include', '/inventory.html');
-  LoginPage.productsList.should('exist');
+  ProductsPage.productsList.should('exist');
+  ProductsPage.hamburgerMenu.should('be.visible').click();
+  ProductsPage.logoutButton.should('be.visible').click();
 });
 
 Then('I should see an error message indicating {string}', (errorMessage) => {
