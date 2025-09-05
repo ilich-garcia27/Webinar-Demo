@@ -2,7 +2,8 @@ pipeline {
   agent any
 
   environment {
-    GITHUB_TOKEN = credentials('github-username-token')
+    LANG = "en_US.UTF-8"
+    LC_ALL = "en_US.UTF-8"
   }
 
   stages {
