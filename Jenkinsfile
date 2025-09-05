@@ -23,7 +23,7 @@ pipeline {
       steps {
         ansiColor('xterm') {
           bat '''
-            chcp 65001
+            chcp 65001 >NUL
             npm run test:ci
           '''
         }
