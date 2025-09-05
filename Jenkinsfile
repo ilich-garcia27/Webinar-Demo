@@ -29,11 +29,5 @@ pipeline {
         archiveArtifacts artifacts: 'reports/mochawesome/*.json', allowEmptyArchive: true
       }
     }
-    stage('Clean Mochawesome Reports') {
-      steps {
-        sh 'rm -rf cypress/reports/mochawesome || true'
-        sh 'rm -rf mochawesome-report || true'
-      }
-    }
   }
 }
