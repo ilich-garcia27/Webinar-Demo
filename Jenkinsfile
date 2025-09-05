@@ -1,12 +1,6 @@
 pipeline {
   agent any
 
-  environment {
-    LANG = "en_US.UTF-8"
-    LC_ALL = "en_US.UTF-8"
-    NODE_ICU_DATA = "utf-8"
-  }
-
   stages {
     stage('Checkout') {
       steps {
@@ -22,16 +16,13 @@ pipeline {
     stage('Run Cypress tests') {
       steps {
         ansiColor('xterm') {
-          bat '''
-            chcp 65001 >NUL
-            npm run test:ci
-          '''
+          bat 'npm run test:ci'
         }
       }
     }
     stage('Archive reports') {
       steps {
-        archiveArtifacts artifacts: 'reports/mochawesome/*.json', allowEmptyArchive: true
+        archiveArtifacts artifacts: 'reports/mochawesome/*.html', allowEmptyArchive: true
       }
     }
   }
