@@ -5,7 +5,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "test:local": "cypress run",
-    "test:ci": "cypress run --reporter mochawesome --reporter-options reportDir=reports/mochawesome,overwrite=false,html=false,json=true"
+    "test:ci": "cypress run --reporter mochawesome --reporter-options reportDir=reports/mochawesome,overwrite=false,html=true,json=false"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
