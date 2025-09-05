@@ -4,6 +4,7 @@ pipeline {
   environment {
     LANG = "en_US.UTF-8"
     LC_ALL = "en_US.UTF-8"
+    NODE_ICU_DATA = "utf-8"
   }
 
   stages {
@@ -21,7 +22,10 @@ pipeline {
     stage('Run Cypress tests') {
       steps {
         ansiColor('xterm') {
-          bat 'npm run test:ci'
+          bat '''
+            chcp 65001
+            npm run test:ci
+          '''
         }
       }
     }
