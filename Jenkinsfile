@@ -29,5 +29,17 @@ pipeline {
         archiveArtifacts artifacts: 'reports/mochawesome/*.json', allowEmptyArchive: true
       }
     }
+    stage('Publicar reporte HTML') {
+      steps {
+        publishHTML(target: [
+      reportDir: 'reports/mochawesome',
+      reportFiles: 'mochawesome.html',
+      reportName: 'Reporte Mochawesome',
+      allowMissing: true,
+      alwaysLinkToLastBuild: true,
+      keepAll: true
+    ])
+      }
+    }
   }
 }
