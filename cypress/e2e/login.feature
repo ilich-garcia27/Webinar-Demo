@@ -3,7 +3,7 @@ Feature: Login
   I want to be able to log in
   In order to access the product catalog
 
-  Scenario: Successful login with standard credentials
+  Scenario: Successful login with valid credentials
     Given I open the login page
     When I enter username "standard_user" and password "secret_sauce"
     And I click the login button
