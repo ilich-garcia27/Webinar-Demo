@@ -14,10 +14,6 @@ class ProductsPage {
   get logoutButton() {
     return cy.get('#logout_sidebar_link');
   }
-
-  get addToCartSauceLabsBackpack() {
-    return cy.get('[data-test="add-to-cart-sauce-labs-backpack"]');
-  }
 }
 
 export default new ProductsPage();
